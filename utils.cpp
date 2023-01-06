@@ -26,3 +26,14 @@ std::vector<std::string> getFileLines(std::string path)
         words.push_back(word);
     return words;
 }
+
+std::vector<Kanji> random_kanji_set(std::vector<Kanji> list, int amount)
+{
+    std::vector<Kanji> result;
+    for (int i = 0; i < amount; i++) {
+        int index = rand()%list.size();
+        result.push_back(list[index]);
+        list.erase(list.begin() + index);
+    }
+    return result;
+}
