@@ -76,9 +76,7 @@ void play_testmode()
 
 		// Generate the possible answers
 		std::vector<Kanji> options = random_kanji_set(kanji);
-		options.push_back(asked);
-		auto rng = std::default_random_engine {};
-		std::shuffle(std::begin(options), std::end(options), rng);
+		options.insert(options.begin()+(rand()%options.size()), asked);
 
 		// Give the user the task
 		std::cout << "What kanji represents '" << asked.meaning << "' ?" << std::endl;
@@ -117,7 +115,7 @@ void play_testmode()
 
 void play_practice()
 {
-	std::cout << "Game-mode not avalible jet." << std::endl;
+	std::cout << "Game-mode not avalible yet." << std::endl;
 }
 
 int main(int argc, char** argv)
