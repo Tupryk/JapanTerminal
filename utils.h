@@ -17,6 +17,12 @@ struct Kanji
 	std::string pronunciation = "";
 };
 
+struct Character
+{
+	std::string symbol;
+	std::string pronunciation;
+};
+
 
 template <typename Out>
 void split(const std::string &s, char delim, Out result);

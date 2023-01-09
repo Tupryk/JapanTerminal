@@ -22,6 +22,21 @@ std::vector<Kanji> read_kanji(std::string file)
 	return kanjis;
 }
 
+std::vector<Character> read_alphabet(std::string file)
+{
+	std::vector<Character> characters;
+	std::vector<std::string> lines = getFileLines(file);
+	for (int i = 0; i < lines.size(); i++)
+	{
+		std::vector<std::string> words = split(lines[i], ' ');
+		Character new_char;
+		new_char.symbol = words[0];
+		new_char.pronunciation = words[1];
+		characters.push_back(new_char);
+	}
+	return characters;
+}
+
 void print_kanjis(std::vector<Kanji> kanjis) {
 	for (auto kanji : kanjis)
 		std::cout << kanji.symbol << " - " << kanji.meaning << std::endl;
@@ -60,10 +75,11 @@ void play_hardmode()
 	}
 }
 
-void play_testmode(bool find_symbol = true)
+void play_testmode(std::string file, bool find_symbol = true)
 {
 	// Load kanji
-	std::vector<Kanji> kanji = read_kanji("kanji.txt");
+	std::vector<Kanji> kanji = read_kanji(file);
+
 	srand(time(NULL));
 
 	unsigned int answered_count = 0;
@@ -109,7 +125,7 @@ void play_testmode(bool find_symbol = true)
 		while (1)
 		{
 			std::string input;
-			std::cout << asked.meaning << " -> ";
+			std::cout << "> ";
 			std::cin >> input;
 
 			if (input == "/exit") // Should store the succes rate and question count in a file
@@ -150,24 +166,66 @@ int main(int argc, char** argv)
 	std::cout << "|  .: Y :. |" << std::endl;
 	std::cout << " \\________/" << std::endl;
 
-	std::cout << "Choose your game mode: " << std::endl;
-	std::cout << "1 - practice" << std::endl;
-	std::cout << "2 - test mode (find symbol)" << std::endl;
-	std::cout << "3 - test mode (find meaning)" << std::endl;
-	std::cout << "4 - hard mode" << std::endl;
+	std::cout << "What do you want to practice?" << std::endl;
+	std::cout << "1 - Katakana" << std::endl;
+	std::cout << "2 - Hiragana" << std::endl;
+	std::cout << "3 - Kanji" << std::endl;
 	std::cout << "> ";
 
 	std::string input;
 	std::cin >> input;
+
 	if (input == "1")
-		play_practice();
+	{
+		std::cout << "Choose your game mode: " << std::endl;
+		std::cout << "1 - test mode (find symbol)" << std::endl;
+		std::cout << "2 - test mode (find meaning)" << std::endl;
+		std::cout << "> ";
+
+		std::cin >> input;
+		if (input == "1")
+			play_testmode("katakana.txt");
+		else if (input == "2")
+			play_testmode("katakana.txt", false);
+		else
+			std::cout << "Invalid Input." << std::endl;
+	}
 	else if (input == "2")
-		play_testmode();
+	{
+		std::cout << "Choose your game mode: " << std::endl;
+		std::cout << "1 - test mode (find symbol)" << std::endl;
+		std::cout << "2 - test mode (find meaning)" << std::endl;
+		std::cout << "> ";
+
+		std::cin >> input;
+		if (input == "1")
+			play_testmode("hiragana.txt");
+		else if (input == "2")
+			play_testmode("hiragana.txt", false);
+		else
+			std::cout << "Invalid Input." << std::endl;
+	}
 	else if (input == "3")
-		play_testmode(false);
-	else if (input == "4")
-		play_hardmode();
-	else
+	{
+		std::cout << "Choose your game mode: " << std::endl;
+		std::cout << "1 - practice" << std::endl;
+		std::cout << "2 - test mode (find symbol)" << std::endl;
+		std::cout << "3 - test mode (find meaning)" << std::endl;
+		std::cout << "4 - hard mode" << std::endl;
+		std::cout << "> ";
+
+		std::cin >> input;
+		if (input == "1")
+			play_practice();
+		else if (input == "2")
+			play_testmode("kanji.txt");
+		else if (input == "3")
+			play_testmode("kanji.txt", false);
+		else if (input == "4")
+			play_hardmode();
+		else
+			std::cout << "Invalid Input." << std::endl;
+	} else
 		std::cout << "Invalid Input." << std::endl;
 
 	return 0;
