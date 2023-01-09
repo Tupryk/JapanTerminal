@@ -67,9 +67,9 @@ void draw_graph(std::vector<float> nums, std::string title)
         std::cout << title << std::endl;
     }
     for (int j = 0; j < rows; j++) {
+        float perc = static_cast<float>(rows-j)/static_cast<float>(rows);
         for (int i = 0; i < columns; i++)
         {
-            float perc = static_cast<float>(rows-j)/static_cast<float>(rows);
             { // Draw percetages on graph
                 int tmp = perc*100;
                 if (i == 0) { std::cout << tmp;
