@@ -79,6 +79,11 @@ void play_testmode(std::string file, bool find_symbol = true)
 {
 	// Load kanji
 	std::vector<Kanji> kanji = read_kanji(file);
+	if (kanji.size() < 6) {
+		std::cout << "not enough Kanji!" << std::endl;
+		return;
+	}
+	std::vector<std::string> mistakes;
 
 	srand(time(NULL));
 
@@ -128,8 +133,12 @@ void play_testmode(std::string file, bool find_symbol = true)
 			std::cout << "> ";
 			std::cin >> input;
 
-			if (input == "/exit") // Should store the succes rate and question count in a file
+			if (input == "/exit") {
+				std::ofstream mistakes_file("./mistakes_in_" + file);
+    			std::ostream_iterator<std::string> output_iterator(mistakes_file, "\n");
+    			std::copy(mistakes.begin(), mistakes.end(), output_iterator);
 				return;
+			} // Should store the succes rate and question count in a file
 
 			int answered = std::stoi(input);
 
@@ -146,6 +155,8 @@ void play_testmode(std::string file, bool find_symbol = true)
 					std::cout << options[answered-1].symbol << " means " << options[answered-1].meaning << "\n" << std::endl;
 				else
 					std::cout << options[answered-1].meaning << " is written " << options[answered-1].symbol << "\n" << std::endl;
+				if (first_guess)
+					mistakes.push_back(asked.meaning + " " + asked.symbol + " " + asked.pronunciation);
 				first_guess = false;
 			}
 		}
@@ -208,7 +219,7 @@ int main(int argc, char** argv)
 	else if (input == "3")
 	{
 		std::cout << "Choose your game mode: " << std::endl;
-		std::cout << "1 - practice" << std::endl;
+		std::cout << "1 - practice mistakes" << std::endl;
 		std::cout << "2 - test mode (find symbol)" << std::endl;
 		std::cout << "3 - test mode (find meaning)" << std::endl;
 		std::cout << "4 - hard mode" << std::endl;
@@ -216,7 +227,7 @@ int main(int argc, char** argv)
 
 		std::cin >> input;
 		if (input == "1")
-			play_practice();
+			play_testmode("mistakes_in_kanji.txt");
 		else if (input == "2")
 			play_testmode("kanji.txt");
 		else if (input == "3")
