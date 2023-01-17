@@ -75,6 +75,39 @@ void play_hardmode()
 	}
 }
 
+void set_learning(unsigned int set_size = 6)
+{
+	std::vector<Kanji> kanji = read_kanji("kanji.txt");
+	if (kanji.size() < set_size) {
+		std::cout << "not enough Kanji!" << std::endl;
+		return;
+	}
+	unsigned int set_count = kanji.size()/set_size;
+	std::vector< std::vector<Kanji> > sets;
+	for (int i = 0; i < set_count; i++) {
+		std::vector<Kanji> new_set;
+		for (int j = 0; j < set_size; j++) {
+			new_set.push_back(kanji[(i*set_size)+j]);
+		}
+		sets.push_back(new_set);
+	}
+	unsigned int set_index = 0;
+	print_kanjis(sets[set_index]);
+	while(1)
+	{
+		std::string input;
+		std::cout << "> ";
+		std::cin >> input;
+
+		if (input == "/exit") break;
+		if (input == "/next")
+		{
+			set_index++;
+			print_kanjis(sets[set_index]);
+		}
+	}
+}
+
 void play_testmode(std::string file, bool find_symbol = true)
 {
 	// Load kanji
@@ -223,6 +256,7 @@ int main(int argc, char** argv)
 		std::cout << "2 - test mode (find symbol)" << std::endl;
 		std::cout << "3 - test mode (find meaning)" << std::endl;
 		std::cout << "4 - hard mode" << std::endl;
+		std::cout << "5 - set learning" << std::endl;
 		std::cout << "> ";
 
 		std::cin >> input;
@@ -234,6 +268,8 @@ int main(int argc, char** argv)
 			play_testmode("kanji.txt", false);
 		else if (input == "4")
 			play_hardmode();
+		else if (input == "5")
+			set_learning();
 		else
 			std::cout << "Invalid Input." << std::endl;
 	} else
