@@ -154,12 +154,18 @@ void App::play_testmode(std::string file, bool find_symbol)
 			std::cout << "---------------------------------------------" << std::endl;
 			for (int i = 0; i < options.size(); i++)
 				std::cout << i+1 << " - " << options[i].symbol << "    ";
+			std::cout << "\n";
 		} else {
-			std::cout << "What is the meaning of '" << asked.symbol << "' ?" << std::endl;
+			std::cout << "What is the meaning of '" << asked.symbol << "' ?\n" << std::endl;
 			for (int i = 0; i < options.size(); i++)
-				std::cout << i+1 << " - " << options[i].meaning << "    ";
+			{
+				std::vector<std::string> meanings = split(options[i].meaning, '/');
+				std::cout << i+1 << " - ";
+				for (auto mean : meanings)
+					std::cout << mean << std::endl;
+				std::cout << std::endl;
+			}
 		}
-		std::cout << "\n";
 
 		bool first_guess = true;
 
@@ -194,7 +200,7 @@ void App::play_testmode(std::string file, bool find_symbol)
 				else
 					std::cout << options[answered-1].meaning << " is written " << options[answered-1].symbol << "\n" << std::endl;
 				if (first_guess)
-					mistakes.push_back(asked.meaning + " " + asked.symbol + " " + asked.pronunciation);
+					mistakes.push_back(asked.symbol + " " + asked.meaning + " " + asked.pronunciation);
 				first_guess = false;
 			}
 		}
