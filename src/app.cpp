@@ -4,16 +4,18 @@
 std::vector<Kanji> App::read_kanji(std::string file)
 {
 	std::vector<Kanji> kanjis;
-	std::vector<std::string> lines = getFileLines(file);
+	std::vector<std::string> lines = getFileLines("../data/" + file);
 	for (int i = 0; i < lines.size(); i++)
 	{
 		std::vector<std::string> words = split(lines[i], ' ');
-		Kanji new_kanji;
-		new_kanji.meaning = words[0];
-		new_kanji.symbol = words[1];
-		if (words.size() > 2)
-			new_kanji.pronunciation = words[3];
-		kanjis.push_back(new_kanji);
+		if (words.size() > 1) {
+			Kanji new_kanji;
+			new_kanji.symbol = words[0];
+			new_kanji.meaning = words[1];
+			if (words.size() > 2)
+				new_kanji.pronunciation = words[3];
+			kanjis.push_back(new_kanji);
+		}
 	}
 	return kanjis;
 }
@@ -21,7 +23,7 @@ std::vector<Kanji> App::read_kanji(std::string file)
 std::vector<Character> App::read_alphabet(std::string file)
 {
 	std::vector<Character> characters;
-	std::vector<std::string> lines = getFileLines(file);
+	std::vector<std::string> lines = getFileLines("../data/" + file);
 	for (int i = 0; i < lines.size(); i++)
 	{
 		std::vector<std::string> words = split(lines[i], ' ');
@@ -40,7 +42,7 @@ void App::print_kanjis(std::vector<Kanji> kanjis) {
 
 void App::play_hardmode()
 {
-	std::vector<Kanji> kanji = read_kanji("kanji.txt");
+	std::vector<Kanji> kanji = read_kanji("../data/kanji.txt");
 	srand(time(NULL));
 	int index = rand()%kanji.size();
 
@@ -73,7 +75,7 @@ void App::play_hardmode()
 
 void App::set_learning(unsigned int set_size)
 {
-	std::vector<Kanji> kanji = read_kanji("kanji.txt");
+	std::vector<Kanji> kanji = read_kanji("../data/kanji.txt");
 	if (kanji.size() < set_size) {
 		std::cout << "not enough Kanji!" << std::endl;
 		return;
@@ -107,7 +109,7 @@ void App::set_learning(unsigned int set_size)
 void App::play_testmode(std::string file, bool find_symbol)
 {
 	// Load kanji
-	std::vector<Kanji> kanji = read_kanji(file);
+	std::vector<Kanji> kanji = read_kanji("../data/" + file);
 	if (kanji.size() < 6) {
 		std::cout << "not enough Kanji!" << std::endl;
 		return;
@@ -144,7 +146,12 @@ void App::play_testmode(std::string file, bool find_symbol)
 
 		// Give the user the task
 		if (find_symbol) {
-			std::cout << "What kanji represents '" << asked.meaning << "' ?" << std::endl;
+			std::vector<std::string> meanings = split(asked.meaning, '/');
+			std::cout << "What kanji represents the following meanings?" << std::endl;
+			std::cout << "---------------------------------------------" << std::endl;
+			for (auto mean : meanings)
+				std::cout << mean << std::endl;
+			std::cout << "---------------------------------------------" << std::endl;
 			for (int i = 0; i < options.size(); i++)
 				std::cout << i+1 << " - " << options[i].symbol << "    ";
 		} else {
@@ -164,7 +171,7 @@ void App::play_testmode(std::string file, bool find_symbol)
 
 			if (input == "/exit") {
 				if (file.rfind("mistakes", 0) != 0) {
-					std::ofstream mistakes_file("./mistakes_in_" + file);
+					std::ofstream mistakes_file("../data/mistakes_in_" + file);
     				std::ostream_iterator<std::string> output_iterator(mistakes_file, "\n");
     				std::copy(mistakes.begin(), mistakes.end(), output_iterator);
 				}
@@ -261,9 +268,9 @@ void App::run()
 		if (input == "1")
 			play_testmode("mistakes_in_kanji.txt");
 		else if (input == "2")
-			play_testmode("kanji.txt");
+			play_testmode("kanji1-500.txt");
 		else if (input == "3")
-			play_testmode("kanji.txt", false);
+			play_testmode("kanji1-500.txt", false);
 		else if (input == "4")
 			play_hardmode();
 		else if (input == "5")

@@ -1,0 +1,500 @@
+一 one
+二 two
+三 three
+四 four
+五 five
+六 six
+七 seven
+八 eight
+九 nine
+十 ten
+日 day/sun/Japan
+国 country
+会 meeting/meet/party/association/interview/join
+人 person
+年 year
+大 large/big
+本 book/present/main/true/real
+中 in/inside/middle/mean/center
+長 long/leader
+出 exit/leave
+同 same/agree/equal
+時 time/hour
+政 politics/government
+事 matter/thing/fact/business/reason/possibly
+自 oneself
+行 going/journey
+社 company/firm/office/association/shrine
+見 see/hopes/chances/idea/opinion/look_at/visible
+月 month/moon
+分 part/minute/segment/share/degree/duty/understand/know/rate/1%/chances
+議 deliberation/consultation/debate/consideration
+後 behind/back/later
+前 in_front/before
+民 people/nation/subjects
+生 life/genuine/birth
+連 take_along/lead/join/connect/party/gang/clique
+発 discharge/departure/publish/emit/start_from/disclose
+間 interval/space
+対 opposite/even/equal/versus/anti-/compare
+上 above/up
+部 section/bureau/dept/class/copy/part/portion
+東 east
+者 someone/person
+党 party/faction/clique
+地 ground/earth
+合 fit/suit/join/0.1
+市 market/city/town
+業 business/vocation/arts/performance
+内 inside/within/between/among/house/home
+相 inter-/mutual/together/each_other/councillor/aspect/phase
+方 direction/person/alternative
+定 determine/fix/establish/decide
+今 now
+回 -times/round/game/revolve
+新 new
+場 location/place
+金 gold
+員 employee/member/number/the_one_in_charge
+入 enter/insert
+選 elect/select/choose/prefer
+立 stand_up
+開 open/unfold/unseal
+手 hand
+米 rice/USA/meter
+力 power/strong/strain/bear_up/exert
+学 study/learning/science
+問 question/ask/problem
+高 tall/high/expensive
+代 substitute/change/period/age/generation/charge
+明 bright/light
+実 reality/truth
+円 circle/yen/round
+関 connection/barrier/gateway/involve/concerning
+決 decide/fix/agree/upon/appoint
+子 child
+動 move/motion/change/confusion/shift/shake
+京 capital
+全 whole/entire/all/complete/fulfill
+目 eye/class/look/insight/experience/care/favor
+表 surface/table/chart/diagram
+戦 war/battle/match
+経 sutra/longitude/expire/warp
+通 traffic/avenue/commute/counter_for_letters/notes/documents
+外 outside
+最 utmost/most/extreme
+言 say
+氏 family_name/surname/clan
+現 present/existing/actual
+理 logic/arrangement/reason/justice/truth
+調 tune/tone/meter/key_(music)/writing_style/prepare/exorcise/investigate
+体 body/substance/object/reality
+化 change/take_the_form_of/influence/enchant/delude/-ization
+田 rice_field
+当 hit/right/appropriate/himself
+約 promise/approximately/shrink
+主 lord/chief/master/main_thing/principal
+題 topic/subject
+下 below/down/descend/give/low/inferior
+首 neck
+意 idea/mind/heart/taste/thought/desire/care/liking
+法 method/law/rule/principle/model/system
+不 negative/non-/bad/ugly/clumsy
+来 come/due/next/cause/become
+作 make/production/prepare/build
+性 sex/gender/nature
+的 mark/target/object/adjective_ending
+要 need/main_point/essence/pivot
+用 utilize/business/service/use/employ
+制 system/law/rule
+治 reign/calm_down/cure/heal/rule/conserve
+度 degrees/occurrence/time
+務 task/duties
+強 strong
+気 spirit/mind/air/atmosphere/mood
+小 little/small
+成 turn_into/become/get/grow/elapse/reach
+期 period/time/date/term
+公 public/prince/official/governmental
+持 hold/have
+野 plains/field/rustic/civilian_life
+協 co-/cooperation
+取 take/fetch/take_up
+都 metropolis/capital
+和 harmony/peace/soften/Japan
+統 overall/relationship/ruling/governing
+以 by_means_of/because/in_view_of/compared_with
+機 mechanism/opportunity/occasion/machine/airplane
+平 even/flat/peace
+総 general/whole/all/full/total
+加 add/addition/increase/join/include
+山 mountain
+思 think
+家 house/home
+話 tale/talk
+世 generation/world/society/public
+受 accept/undergo/answer_(phone)/take/get/catch/receive
+区 ward/district
+領 jurisdiction/dominion/territory/fief/reign
+多 many/frequent/much
+県 prefecture
+続 continue/series/sequel
+進 advance/proceed/progress/promote
+正 correct/justice/righteous
+安 relax/cheap/low⁄quiet/rested/contented/peaceful
+設 establishment/provision/prepare
+保 protect/guarantee/keep/preserve/sustain/support
+改 reformation/change/modify/mend/renew/examine/inspect/search
+数 number/strength/fate/law/figures
+記 scribe/account/narrative
+院 number/strength/fate/law/figures
+女
+初
+北
+午
+指
+権
+心
+界
+支
+第
+産
+結
+百
+派
+点
+教
+報
+済
+書
+府
+活
+原
+先
+共
+得
+解
+名
+交
+資
+予
+川
+向
+際
+査
+勝
+面
+委
+告
+軍
+文
+反
+元
+重
+近
+千
+考
+判
+認
+画
+海
+参
+売
+利
+組
+知
+案
+道
+信
+策
+集
+在
+件
+団
+別
+物
+側
+任
+引
+使
+求
+所
+次
+水
+半
+品
+昨
+論
+計
+死
+官
+増
+係
+感
+特
+情
+投
+示
+変
+打
+男
+基
+私
+各
+始
+島
+直
+両
+朝
+革
+価
+式
+確
+村
+提
+運
+終
+挙
+果
+西
+勢
+減
+台
+広
+容
+必
+応
+演
+電
+歳
+住
+争
+談
+能
+無
+再
+位
+置
+企
+真
+流
+格
+有
+疑
+口
+過
+局
+少
+放
+税
+検
+藤
+町
+常
+校
+料
+沢
+裁
+状
+工
+建
+語
+球
+営
+空
+職
+証
+土
+与
+急
+止
+送
+援
+供
+可
+役
+構
+木
+割
+聞
+身
+費
+付
+施
+切
+由
+説
+転
+食
+比
+難
+防
+補
+車
+優
+夫
+研
+収
+断
+井
+何
+南
+石
+足
+違
+消
+境
+神
+番
+規
+術
+護
+展
+態
+導
+鮮
+備
+宅
+害
+配
+副
+算
+視
+条
+幹
+独
+警
+宮
+究
+育
+席
+輸
+訪
+楽
+起
+万
+着
+乗
+店
+述
+残
+想
+線
+率
+病
+農
+州
+武
+声
+質
+念
+待
+試
+族
+象
+銀
+域
+助
+労
+例
+衛
+然
+早
+張
+映
+限
+親
+額
+監
+環
+験
+追
+審
+商
+葉
+義
+伝
+働
+形
+景
+落
+欧
+担
+好
+退
+準
+賞
+訴
+辺
+造
+英
+被
+株
+頭
+技
+低
+毎
+医
+復
+仕
+去
+姿
+味
+負
+閣
+韓
+渡
+失
+移
+差
+衆
+個
+門
+写
+評
+課
+末
+守
+若
+脳
+極
+種
+美
+岡
+影
+命
+含
+福
+蔵
+量
+望
+松
+非
+撃
+佐
+核
+観
+察
+整
+段
+横
+融
+型
+白
+深
+字
+答
+夜
+製
+票
+況
+音
+申
+様
+財
+港
+識
+注
+呼
+渉
+達

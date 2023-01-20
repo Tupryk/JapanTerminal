@@ -1,9 +1,6 @@
-degree/time 度 
-whole 全 
-letter/writings 文 
-up/top 上 
-same 同 
-hand 手 
-meet 会 
-fix 定 
-power 力 
+prefecture 県 
+field 野 
+body 体 
+to_go 行 
+people/nation 民 
+year 年 
