@@ -1,2 +1,0 @@
-power 力 
-degree/time 度 
