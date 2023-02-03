@@ -75,7 +75,7 @@ void App::play_hardmode()
 
 void App::set_learning(unsigned int set_size)
 {
-	std::vector<Kanji> kanji = read_kanji("../data/kanji.txt");
+	std::vector<Kanji> kanji = read_kanji("../data/kanji1-500.txt");
 	if (kanji.size() < set_size) {
 		std::cout << "not enough Kanji!" << std::endl;
 		return;
