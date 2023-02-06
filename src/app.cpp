@@ -64,8 +64,14 @@ void App::play_testmode(int level, bool inverted)
 		std::vector<Kanji> options = random_kanji_set(kanji);
 		options.insert(options.begin()+(rand()%options.size()), asked);
 
-		if (level_size <= options.size()-1) {
+		if (kanji.size() <= options.size()-1) {
 			std::cout << "You got all Kanji!!!" << std::endl;
+			int tmp = std::stoi(success_rates[level]);
+			if (answered_count >= level_size*0.5 && tmp < success_rate(answered_count, correct)*100)
+				success_rates[level] = std::to_string(static_cast<int>(success_rate(answered_count, correct)*100));
+			std::ofstream mistakes_file("../data/success_rate1-500.txt");
+			std::ostream_iterator<std::string> output_iterator(mistakes_file, "\n");
+			std::copy(success_rates.begin(), success_rates.end(), output_iterator);
 			return;
 		}
 		std::cout << "_______________________" << std::endl;
