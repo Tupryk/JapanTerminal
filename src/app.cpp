@@ -146,12 +146,18 @@ void App::play_testmode(int level, bool inverted)
 
 void App::run()
 {
-	std::cout << "Welcome to JapanTerminal!" << std::endl;
-	std::cout << "  /\\____/\\" << std::endl;
-	std::cout << " /        \\" << std::endl;
-	std::cout << "|   U   U  |" << std::endl;
-	std::cout << "|  .: Y :. |" << std::endl;
-	std::cout << " \\________/" << std::endl;
+	std::cout << "   ____" << std::endl;
+	std::cout << "  / ___ \\" << std::endl;
+	std::cout << " / /   \\|                                /\\____/\\" << std::endl;
+	std::cout << " | |                                    /        \\" << std::endl;
+	std::cout << " | |                                   |   U   U  |" << std::endl;
+	std::cout << " \\ \\-----------------------------------|  .: Y :. |" << std::endl;
+	std::cout << "  |              Japan Terminal         \\________/" << std::endl;
+	std::cout << "  |                   :D                      |" << std::endl;
+	std::cout << "  | |-| |-------------------------------| |-| |" << std::endl;
+	std::cout << "  | | | |                               | | | |" << std::endl;
+	std::cout << "  | | | |                               | | | |" << std::endl;
+	std::cout << "   ''' '''                               ''' '''" << std::endl;
 
 	std::cout << "What do you want to practice?" << std::endl;
 	std::cout << "1 - Katakana" << std::endl;

@@ -20,6 +20,7 @@ public:
 };
 
 std::vector<std::vector<char> > level_block_visual(int lvl, short int succes_rate = -1);
+void draw_graph(std::vector<float> nums, std::string title = "GRAPHY");
 
 
 #endif

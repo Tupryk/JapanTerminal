@@ -37,7 +37,5 @@ std::vector<Kanji> random_kanji_set(std::vector<Kanji> list, int amount = 5);
 
 float success_rate(unsigned int correct, unsigned int wrong);
 
-void draw_graph(std::vector<float> nums, std::string title = "GRAPHY");
-
 
 #endif

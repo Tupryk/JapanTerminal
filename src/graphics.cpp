@@ -100,3 +100,46 @@ std::vector<std::vector<char> > level_block_visual(int lvl, short int succes_rat
 
 	return final;
 }
+
+void draw_graph(std::vector<float> nums, std::string title)
+{
+    int rows = 15;
+    int columns = 20;
+    int colums = nums.size();
+    int dif = nums.size()-columns;
+    if (nums.size() < columns) {
+        columns = nums.size();
+        dif = 0;
+    }
+    std::cout << "     "; // Space for numbers
+    if (title.length() < columns) {
+        int line_len = (columns-((title.length()+2)*0.5))*0.5;
+        for (int i = 0; i < line_len; i++)
+            std::cout << "--";
+        std::cout << " " << title << " ";
+        for (int i = 0; i < line_len; i++)
+            std::cout << "--";
+        std::cout << "\n";
+    } else {
+        std::cout << title << std::endl;
+    }
+    for (int j = 0; j < rows; j++) {
+        float perc = static_cast<float>(rows-j)/static_cast<float>(rows);
+        for (int i = 0; i < columns; i++)
+        {
+            { // Draw percetages on graph
+                int tmp = perc*100;
+                if (i == 0) { std::cout << tmp;
+                if (tmp < 10) std::cout << "  % ";
+                else if (tmp < 100) std::cout << " % ";
+                else std::cout << "% "; }
+            }
+            if (nums[i+dif] > perc)
+                std::cout << "\033[1;34m# \033[0m";
+            else
+                std::cout << "  ";
+        }
+        std::cout << "\n";
+    }
+}
+
