@@ -1,7 +1,9 @@
-general/whole/all/full/total 総 
-connection/barrier/gateway/involve/concerning 関 
-deliberation/consultation/debate/consideration 議 
-investigate 査 
-correct/justice/righteous 正 
-authority/power/rights 権 
-consider/think_over 考 
+護 safeguard/protect 
+英 England/English 
+個 individual/counter_for_articles 
+場 location/place 
+深 deep/heighten/intensify/strengthen 
+試 test/try/attempt/experiment/ordeal 
+味 flavor/taste 
+付 adhere/attach/refer_to/append 
+石 stone 
